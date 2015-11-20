@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Leaflet.Icon.Glyph demo</title>
+
+<link href="https://leafletjs-cdn.s3.amazonaws.com/content/leaflet/master/leaflet.css" rel="stylesheet" type="text/css" />
+<script src="https://leafletjs-cdn.s3.amazonaws.com/content/leaflet/master/leaflet-src.js"></script>
+
+	<script type="text/javascript" src="Leaflet.Icon.Glyph.js"></script>
+
+	<link href="https://cdn.materialdesignicons.com/1.3.41/css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
+
+	<style>
+    #mdi-map {
+      width:600px;
+      height:400px;
+      margin: 0;
+    }
+	</style>
+</head>
+<body>
+
+	<h2>Material design icons</h2>
+	<div id='mdi-map'></div>
+	<p>
+	<code><pre>
+&lt;link href="https://cdn.materialdesignicons.com/1.3.41/css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
+&lt;script>
+	L.marker([-20,-20], {icon: L.icon.glyph({ prefix: 'mdi', glyph: 'school' }) }).addTo(map);
+&lt;/script>
+	</pre></code></p>
+
+
+
+
+  <script>
+
+    var myCenter = new L.LatLng(0, 0);
+    var map = new L.Map('mdi-map', {center: myCenter, zoom: 2});
+
+    var positron = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
+        maxZoom: 24,
+        maxNativeZoom: 18
+    }).addTo(map);
+
+
+    L.marker([-20, 0], {icon: L.icon.glyph({ prefix: 'mdi', glyph: 'compass' }) }).addTo(map);
+    L.marker([-10, 0], {icon: L.icon.glyph({ prefix: 'mdi', glyph: 'directions' }) }).addTo(map);
+    L.marker([  0, 0], {icon: L.icon.glyph({ prefix: 'mdi', glyph: 'help-circle' }) }).addTo(map);
+    L.marker([ 10, 0], {icon: L.icon.glyph({ prefix: 'mdi', glyph: 'cloud' }) }).addTo(map);
+    L.marker([ 20, 0], {icon: L.icon.glyph({ prefix: 'mdi', glyph: 'clock' }) }).addTo(map);
+
+    L.marker([-20, 10], {icon: L.icon.glyph({ prefix: 'mdi', glyph: 'fire' }) }).addTo(map);
+    L.marker([-10, 10], {icon: L.icon.glyph({ prefix: 'mdi', glyph: 'flower' }) }).addTo(map);
+    L.marker([  0, 10], {icon: L.icon.glyph({ prefix: 'mdi', glyph: 'human-male-female' }) }).addTo(map);
+    L.marker([ 10, 10], {icon: L.icon.glyph({ prefix: 'mdi', glyph: 'information' }) }).addTo(map);
+    L.marker([ 20, 10], {icon: L.icon.glyph({ prefix: 'mdi', glyph: 'lock' }) }).addTo(map);
+
+    L.marker([-20,-10], {icon: L.icon.glyph({ prefix: 'mdi', glyph: 'key' }) }).addTo(map);
+    L.marker([-10,-10], {icon: L.icon.glyph({ prefix: 'mdi', glyph: 'leaf' }) }).addTo(map);
+    L.marker([  0,-10], {icon: L.icon.glyph({ prefix: 'mdi', glyph: 'marker-check' }) }).addTo(map);
+    L.marker([ 10,-10], {icon: L.icon.glyph({ prefix: 'mdi', glyph: 'mouse' }) }).addTo(map);
+    L.marker([ 20,-10], {icon: L.icon.glyph({ prefix: 'mdi', glyph: 'nature' }) }).addTo(map);
+
+
+    L.marker([-20, 20], {icon: L.icon.glyph({ prefix: 'mdi', glyph: 'navigation' }) }).addTo(map);
+    L.marker([-10, 20], {icon: L.icon.glyph({ prefix: 'mdi', glyph: 'music-circle' }) }).addTo(map);
+    L.marker([  0, 20], {icon: L.icon.glyph({ prefix: 'mdi', glyph: 'panorama' }) }).addTo(map);
+    L.marker([ 10, 20], {icon: L.icon.glyph({ prefix: 'mdi', glyph: 'pause-circle' }) }).addTo(map);
+    L.marker([ 20, 20], {icon: L.icon.glyph({ prefix: 'mdi', glyph: 'phone' }) }).addTo(map);
+
+    L.marker([-20,-20], {icon: L.icon.glyph({ prefix: 'mdi', glyph: 'school' }) }).addTo(map);
+    L.marker([-10,-20], {icon: L.icon.glyph({ prefix: 'mdi', glyph: 'sd' }) }).addTo(map);
+    L.marker([  0,-20], {icon: L.icon.glyph({ prefix: 'mdi', glyph: 'security' }) }).addTo(map);
+    L.marker([ 10,-20], {icon: L.icon.glyph({ prefix: 'mdi', glyph: 'subway' }) }).addTo(map);
+    L.marker([ 20,-20], {icon: L.icon.glyph({ prefix: 'mdi', glyph: 'ticket' }) }).addTo(map);
+
+
+
+  </script>
+</body>
+</html>
