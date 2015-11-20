@@ -8,6 +8,10 @@ MakiMarkers. The main difference is that Leaflet.Icon.Glyph does not need any
 CSS to be set up, and should work with any bootstrap-style icon fonts.
 
 
+## Live demo
+
+At [https://ivansanchez.github.io/Leaflet.Icon.Glyph/demo.html](https://ivansanchez.github.io/Leaflet.Icon.Glyph/demo.html)
+
 
 ## Usage
 
