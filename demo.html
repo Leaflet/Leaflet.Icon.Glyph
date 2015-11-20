@@ -10,8 +10,10 @@
 
 	<link href="https://cdn.materialdesignicons.com/1.3.41/css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
 
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
 	<style>
-    #mdi-map {
+    .map {
       width:600px;
       height:400px;
       margin: 0;
@@ -21,12 +23,26 @@
 <body>
 
 	<h2>Material design icons</h2>
-	<div id='mdi-map'></div>
+	<div class='map' id='mdi-map'></div>
 	<p>
 	<code><pre>
 &lt;link href="https://cdn.materialdesignicons.com/1.3.41/css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
 &lt;script>
 	L.marker([-20,-20], {icon: L.icon.glyph({ prefix: 'mdi', glyph: 'school' }) }).addTo(map);
+&lt;/script>
+	</pre></code></p>
+
+
+<hr>
+
+	<h2>Glyphicons-halflings from Bootstrap</h2>
+
+	<div class='map' id='glyphicons-map'></div>
+	<p>
+	<code><pre>
+&lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+&lt;script>
+	L.marker([-20,-20], {icon: L.icon.glyph({ prefix: 'glyphicon', glyph: 'adjust' }) }).addTo(map);
 &lt;/script>
 	</pre></code></p>
 
@@ -76,6 +92,46 @@
     L.marker([ 10,-20], {icon: L.icon.glyph({ prefix: 'mdi', glyph: 'subway' }) }).addTo(map);
     L.marker([ 20,-20], {icon: L.icon.glyph({ prefix: 'mdi', glyph: 'ticket' }) }).addTo(map);
 
+
+    //////////
+
+	var map = new L.Map('glyphicons-map', {center: myCenter, zoom: 2});
+    var positron = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
+        maxZoom: 24,
+        maxNativeZoom: 18
+    }).addTo(map);
+
+    L.marker([-20, 0], {icon: L.icon.glyph({ prefix: 'glyphicon', glyph: 'plus' }) }).addTo(map);
+    L.marker([-10, 0], {icon: L.icon.glyph({ prefix: 'glyphicon', glyph: 'user' }) }).addTo(map);
+    L.marker([  0, 0], {icon: L.icon.glyph({ prefix: 'glyphicon', glyph: 'off' }) }).addTo(map);
+    L.marker([ 10, 0], {icon: L.icon.glyph({ prefix: 'glyphicon', glyph: 'time' }) }).addTo(map);
+    L.marker([ 20, 0], {icon: L.icon.glyph({ prefix: 'glyphicon', glyph: 'road' }) }).addTo(map);
+
+    L.marker([-20, 10], {icon: L.icon.glyph({ prefix: 'glyphicon', glyph: 'lock' }) }).addTo(map);
+    L.marker([-10, 10], {icon: L.icon.glyph({ prefix: 'glyphicon', glyph: 'headphones' }) }).addTo(map);
+    L.marker([  0, 10], {icon: L.icon.glyph({ prefix: 'glyphicon', glyph: 'tag' }) }).addTo(map);
+    L.marker([ 10, 10], {icon: L.icon.glyph({ prefix: 'glyphicon', glyph: 'flag' }) }).addTo(map);
+    L.marker([ 20, 10], {icon: L.icon.glyph({ prefix: 'glyphicon', glyph: 'camera' }) }).addTo(map);
+
+    L.marker([-20,-10], {icon: L.icon.glyph({ prefix: 'glyphicon', glyph: 'adjust' }) }).addTo(map);
+    L.marker([-10,-10], {icon: L.icon.glyph({ prefix: 'glyphicon', glyph: 'minus-sign' }) }).addTo(map);
+    L.marker([  0,-10], {icon: L.icon.glyph({ prefix: 'glyphicon', glyph: 'exclamation-sign' }) }).addTo(map);
+    L.marker([ 10,-10], {icon: L.icon.glyph({ prefix: 'glyphicon', glyph: 'eye-open' }) }).addTo(map);
+    L.marker([ 20,-10], {icon: L.icon.glyph({ prefix: 'glyphicon', glyph: 'plane' }) }).addTo(map);
+
+
+    L.marker([-20, 20], {icon: L.icon.glyph({ prefix: 'glyphicon', glyph: 'shopping-cart' }) }).addTo(map);
+    L.marker([-10, 20], {icon: L.icon.glyph({ prefix: 'glyphicon', glyph: 'certificate' }) }).addTo(map);
+    L.marker([  0, 20], {icon: L.icon.glyph({ prefix: 'glyphicon', glyph: 'dashboard' }) }).addTo(map);
+    L.marker([ 10, 20], {icon: L.icon.glyph({ prefix: 'glyphicon', glyph: 'record' }) }).addTo(map);
+    L.marker([ 20, 20], {icon: L.icon.glyph({ prefix: 'glyphicon', glyph: 'cutlery' }) }).addTo(map);
+
+    L.marker([-20,-20], {icon: L.icon.glyph({ prefix: 'glyphicon', glyph: 'piggy-bank' }) }).addTo(map);
+    L.marker([-10,-20], {icon: L.icon.glyph({ prefix: 'glyphicon', glyph: 'apple' }) }).addTo(map);
+    L.marker([  0,-20], {icon: L.icon.glyph({ prefix: 'glyphicon', glyph: 'sunglasses' }) }).addTo(map);
+    L.marker([ 10,-20], {icon: L.icon.glyph({ prefix: 'glyphicon', glyph: 'triangle-top' }) }).addTo(map);
+    L.marker([ 20,-20], {icon: L.icon.glyph({ prefix: 'glyphicon', glyph: 'phone' }) }).addTo(map);
 
 
   </script>
