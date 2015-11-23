@@ -9,7 +9,7 @@
 	<script type="text/javascript" src="Leaflet.Icon.Glyph.js"></script>
 
 <!-- 	Material Design Icons (AKA "MDI")-->
-	<link href="https://cdn.materialdesignicons.com/1.3.41/css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
+	<link href="https://cdn.materialdesignicons.com/1.3.41/css/materialdesignicons.min.css" rel="stylesheet" type="text/css"/>
 
 <!-- 	Glyphicons (from Bootstrap CDN) -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
@@ -25,7 +25,7 @@
 
 <!-- 	Elusive -->
 <!-- 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/elusive-icons/2.0.0/css/elusive-icons.min.css"> -->
-	<link rel="stylesheet" href="https://elusiveicons.com/assets/elusive-icons/css/elusive-icons.css">
+<!-- 	<link rel="stylesheet" href="https://elusiveicons.com/assets/elusive-icons/css/elusive-icons.css"> -->
 
 
 
@@ -49,7 +49,14 @@
 </head>
 <body>
 
-Check the documentation at <a href='https://github.com/IvanSanchez/Leaflet.Icon.Glyph'>https://github.com/IvanSanchez/Leaflet.Icon.Glyph</a>
+
+<h1>Leaflet.Icon.Glyph</h1>
+
+<p>This <a href='http://www.leafletjs.com'>Leaflet</a> plugin allows you to show glyphs from icon fonts in your map markers.</p>
+
+<p>Check the documentation at <a href='https://github.com/IvanSanchez/Leaflet.Icon.Glyph'>https://github.com/IvanSanchez/Leaflet.Icon.Glyph</a>.</p>
+
+<hr>
 
 	<h2><a href='https://materialdesignicons.com/'>Material design icons</a></h2>
 	<div class='map' id='mdi-map'></div>
@@ -60,6 +67,8 @@ Check the documentation at <a href='https://github.com/IvanSanchez/Leaflet.Icon.
 	L.marker([-20,-20], {icon: L.icon.glyph({ prefix: 'mdi', glyph: 'school' }) }).addTo(map);
 &lt;/script>
 	</pre></code></p>
+
+	For some weird reason, Chrome on Android <a href='https://github.com/google/material-design-icons/issues/248'>refuses to load the icon font from that CDN</a>. For this reason, consider using another method of hosting these icons if you need them.
 
 
 <hr>
@@ -114,8 +123,8 @@ Check the documentation at <a href='https://github.com/IvanSanchez/Leaflet.Icon.
 
 	<h2><a href='http://elusiveicons.com'>Elusive</a></h2>
 
-	<div class='map' id='elusive-map'></div>
-	<p>
+<!-- 	<div class='map' id='elusive-map'></div> -->
+<!-- 	<p> -->
 	<code><pre>
 &lt;link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/elusive-icons/2.0.0/css/elusive-icons.min.css">
 
@@ -124,7 +133,7 @@ Check the documentation at <a href='https://github.com/IvanSanchez/Leaflet.Icon.
 &lt;/script>
 	</pre></code></p>
 
-
+<p>The CDN for Elusive Icons is not stable at the time of this writing. Consider hosting the icon font for Elusive yourself.</p>
 
 
 
@@ -322,43 +331,43 @@ Check the documentation at <a href='https://github.com/IvanSanchez/Leaflet.Icon.
 
     //////////
 
-	var map = new L.Map('elusive-map', {center: myCenter, zoom: 2});
-    var positron = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
-        maxZoom: 24,
-        maxNativeZoom: 18
-    }).addTo(map);
-
-    L.marker([-20, 0], {icon: L.icon.glyph({ prefix: 'el', glyph: 'car' }) }).addTo(map);
-    L.marker([-10, 0], {icon: L.icon.glyph({ prefix: 'el', glyph: 'adult' }) }).addTo(map);
-    L.marker([  0, 0], {icon: L.icon.glyph({ prefix: 'el', glyph: 'adjust' }) }).addTo(map);
-    L.marker([ 10, 0], {icon: L.icon.glyph({ prefix: 'el', glyph: 'comment' }) }).addTo(map);
-    L.marker([ 20, 0], {icon: L.icon.glyph({ prefix: 'el', glyph: 'compass-alt' }) }).addTo(map);
-
-    L.marker([-20, 10], {icon: L.icon.glyph({ prefix: 'el', glyph: 'facetime-video' }) }).addTo(map);
-    L.marker([-10, 10], {icon: L.icon.glyph({ prefix: 'el', glyph: 'female' }) }).addTo(map);
-    L.marker([  0, 10], {icon: L.icon.glyph({ prefix: 'el', glyph: 'filter' }) }).addTo(map);
-    L.marker([ 10, 10], {icon: L.icon.glyph({ prefix: 'el', glyph: 'group' }) }).addTo(map);
-    L.marker([ 20, 10], {icon: L.icon.glyph({ prefix: 'el', glyph: 'globe' }) }).addTo(map);
-
-    L.marker([-20,-10], {icon: L.icon.glyph({ prefix: 'el', glyph: 'headphones' }) }).addTo(map);
-    L.marker([-10,-10], {icon: L.icon.glyph({ prefix: 'el', glyph: 'hourglass' }) }).addTo(map);
-    L.marker([  0,-10], {icon: L.icon.glyph({ prefix: 'el', glyph: 'hearing-impaired' }) }).addTo(map);
-    L.marker([ 10,-10], {icon: L.icon.glyph({ prefix: 'el', glyph: 'heart' }) }).addTo(map);
-    L.marker([ 20,-10], {icon: L.icon.glyph({ prefix: 'el', glyph: 'idea' }) }).addTo(map);
-
-
-    L.marker([-20, 20], {icon: L.icon.glyph({ prefix: 'el', glyph: 'info-circle' }) }).addTo(map);
-    L.marker([-10, 20], {icon: L.icon.glyph({ prefix: 'el', glyph: 'lock' }) }).addTo(map);
-    L.marker([  0, 20], {icon: L.icon.glyph({ prefix: 'el', glyph: 'map-marker' }) }).addTo(map);
-    L.marker([ 10, 20], {icon: L.icon.glyph({ prefix: 'el', glyph: 'magnet' }) }).addTo(map);
-    L.marker([ 20, 20], {icon: L.icon.glyph({ prefix: 'el', glyph: 'remove-sign' }) }).addTo(map);
-
-    L.marker([-20,-20], {icon: L.icon.glyph({ prefix: 'el', glyph: 'star' }) }).addTo(map);
-    L.marker([-10,-20], {icon: L.icon.glyph({ prefix: 'el', glyph: 'wrench' }) }).addTo(map);
-    L.marker([  0,-20], {icon: L.icon.glyph({ prefix: 'el', glyph: 'user' }) }).addTo(map);
-    L.marker([ 10,-20], {icon: L.icon.glyph({ prefix: 'el', glyph: 'th' }) }).addTo(map);
-    L.marker([ 20,-20], {icon: L.icon.glyph({ prefix: 'el', glyph: 'tint' }) }).addTo(map);
+// 	var map = new L.Map('elusive-map', {center: myCenter, zoom: 2});
+//     var positron = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+//         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
+//         maxZoom: 24,
+//         maxNativeZoom: 18
+//     }).addTo(map);
+//
+//     L.marker([-20, 0], {icon: L.icon.glyph({ prefix: 'el', glyph: 'car' }) }).addTo(map);
+//     L.marker([-10, 0], {icon: L.icon.glyph({ prefix: 'el', glyph: 'adult' }) }).addTo(map);
+//     L.marker([  0, 0], {icon: L.icon.glyph({ prefix: 'el', glyph: 'adjust' }) }).addTo(map);
+//     L.marker([ 10, 0], {icon: L.icon.glyph({ prefix: 'el', glyph: 'comment' }) }).addTo(map);
+//     L.marker([ 20, 0], {icon: L.icon.glyph({ prefix: 'el', glyph: 'compass-alt' }) }).addTo(map);
+//
+//     L.marker([-20, 10], {icon: L.icon.glyph({ prefix: 'el', glyph: 'facetime-video' }) }).addTo(map);
+//     L.marker([-10, 10], {icon: L.icon.glyph({ prefix: 'el', glyph: 'female' }) }).addTo(map);
+//     L.marker([  0, 10], {icon: L.icon.glyph({ prefix: 'el', glyph: 'filter' }) }).addTo(map);
+//     L.marker([ 10, 10], {icon: L.icon.glyph({ prefix: 'el', glyph: 'group' }) }).addTo(map);
+//     L.marker([ 20, 10], {icon: L.icon.glyph({ prefix: 'el', glyph: 'globe' }) }).addTo(map);
+//
+//     L.marker([-20,-10], {icon: L.icon.glyph({ prefix: 'el', glyph: 'headphones' }) }).addTo(map);
+//     L.marker([-10,-10], {icon: L.icon.glyph({ prefix: 'el', glyph: 'hourglass' }) }).addTo(map);
+//     L.marker([  0,-10], {icon: L.icon.glyph({ prefix: 'el', glyph: 'hearing-impaired' }) }).addTo(map);
+//     L.marker([ 10,-10], {icon: L.icon.glyph({ prefix: 'el', glyph: 'heart' }) }).addTo(map);
+//     L.marker([ 20,-10], {icon: L.icon.glyph({ prefix: 'el', glyph: 'idea' }) }).addTo(map);
+//
+//
+//     L.marker([-20, 20], {icon: L.icon.glyph({ prefix: 'el', glyph: 'info-circle' }) }).addTo(map);
+//     L.marker([-10, 20], {icon: L.icon.glyph({ prefix: 'el', glyph: 'lock' }) }).addTo(map);
+//     L.marker([  0, 20], {icon: L.icon.glyph({ prefix: 'el', glyph: 'map-marker' }) }).addTo(map);
+//     L.marker([ 10, 20], {icon: L.icon.glyph({ prefix: 'el', glyph: 'magnet' }) }).addTo(map);
+//     L.marker([ 20, 20], {icon: L.icon.glyph({ prefix: 'el', glyph: 'remove-sign' }) }).addTo(map);
+//
+//     L.marker([-20,-20], {icon: L.icon.glyph({ prefix: 'el', glyph: 'star' }) }).addTo(map);
+//     L.marker([-10,-20], {icon: L.icon.glyph({ prefix: 'el', glyph: 'wrench' }) }).addTo(map);
+//     L.marker([  0,-20], {icon: L.icon.glyph({ prefix: 'el', glyph: 'user' }) }).addTo(map);
+//     L.marker([ 10,-20], {icon: L.icon.glyph({ prefix: 'el', glyph: 'th' }) }).addTo(map);
+//     L.marker([ 20,-20], {icon: L.icon.glyph({ prefix: 'el', glyph: 'tint' }) }).addTo(map);
 
 
 
