@@ -72,7 +72,7 @@ L.Icon.Glyph = L.Icon.extend({
 			anchor = size.divideBy(2, true);
 		}
 
-		div.className = 'leaflet-glyph-icon ' + className;
+		div.className = 'leaflet-marker-icon leaflet-glyph-icon ' + className;
 		if (options.iconUrl) {
 			div.style.backgroundImage = "url('" + options.iconUrl + "')";
 		}
