@@ -7,10 +7,14 @@ This is very similar to other LeafletJS plugins such as AwesomeMarkers or
 MakiMarkers. The main difference is that Leaflet.Icon.Glyph does not need any
 CSS to be set up, and should work with any bootstrap-style icon fonts.
 
+This means hundreds of glyphs at your disposal.
 
-## Live demo
 
-At [https://ivansanchez.github.io/Leaflet.Icon.Glyph/demo.html](https://ivansanchez.github.io/Leaflet.Icon.Glyph/demo.html)
+## Demo
+
+![Glyph icons demo](https://ivansanchez.github.io/Leaflet.Icon.Glyph/demo.png)
+
+Live demo at [https://ivansanchez.github.io/Leaflet.Icon.Glyph/demo.html](https://ivansanchez.github.io/Leaflet.Icon.Glyph/demo.html)
 
 
 ## Usage
