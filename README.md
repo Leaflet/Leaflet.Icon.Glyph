@@ -71,6 +71,10 @@ var icon = L.icon.glyph({
 	bgPos: [0, 0]
 	// Akin to the 'bgPos' option in L.DivIcon. Use when using a sprite for the
 	// icon image.
+
+	bgSize: [800, 100]
+	// Forces the size of the background image. Use when using a sprite for the
+	// icon image in "retina" mode.
 });
 ```
 
@@ -82,10 +86,11 @@ be easier to subclass `L.Icon.Glyph` into your own icon class:
 
 ```js
 L.Icon.Glyph.MDI = L.Icon.Glyph.extend({
-	options: 'mdi',
-
-	iconUrl: '/path/to/your/icon/image.png',
-	iconSize: [30, 50]
+	options: {
+		prefix: 'mdi',
+		iconUrl: '/path/to/your/icon/image.png',
+		iconSize: [30, 50]
+	}
 });
 
 // Factory

@@ -57,28 +57,30 @@ L.Icon.Glyph = L.Icon.extend({
 		return span;
 	},
 
-	_setIconStyles: function (div, className) {
-		var options = this.options,
-			size = L.point(options[name === 'shadow' ? 'shadowSize' : 'iconSize']),
-			anchor;
-
+	_setIconStyles: function (div, name) {
 		if (name === 'shadow') {
-			anchor = L.point(options.shadowAnchor || options.iconAnchor);
-		} else {
-			anchor = L.point(options.iconAnchor);
+			return L.Icon.prototype._setIconStyles.call(this, div, name);
 		}
+
+		var options = this.options,
+		    size = L.point(options['iconSize']),
+		    anchor = L.point(options.iconAnchor);
 
 		if (!anchor && size) {
 			anchor = size.divideBy(2, true);
 		}
 
-		div.className = 'leaflet-marker-icon leaflet-glyph-icon ' + className;
-		if (options.iconUrl) {
-			div.style.backgroundImage = "url('" + options.iconUrl + "')";
+		div.className = 'leaflet-marker-icon leaflet-glyph-icon ' + name;
+		var src = this._getIconUrl('icon');
+		if (src) {
+			div.style.backgroundImage = "url('" + src + "')";
 		}
 
 		if (options.bgPos) {
 			div.style.backgroundPosition = (-options.bgPos.x) + 'px ' + (-options.bgPos.y) + 'px';
+		}
+		if (options.bgSize) {
+			div.style.backgroundSize = (options.bgSize.x) + 'px ' + (options.bgSize.y) + 'px';
 		}
 
 		if (anchor) {
@@ -90,13 +92,6 @@ L.Icon.Glyph = L.Icon.extend({
 			div.style.width  = size.x + 'px';
 			div.style.height = size.y + 'px';
 		}
-	},
-
-	createShadow: function () {
-		var div = document.createElement('div');
-
-		this._setIconStyles(div, 'shadow');
-		return div;
 	}
 });
 
