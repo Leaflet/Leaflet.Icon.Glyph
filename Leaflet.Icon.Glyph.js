@@ -15,7 +15,7 @@ L.Icon.Glyph = L.Icon.extend({
 // 		shadowSize: [36, 16],
 // 		bgPos: (Point)
 		className: '',
-		prefix: 'glyphicon',
+		prefix: '',
 		glyph: 'home',
 		glyphColor: 'white',
 		glyphSize: '11px',	// in CSS units
@@ -36,9 +36,13 @@ L.Icon.Glyph = L.Icon.extend({
 
 	_createGlyph: function() {
 		var glyphClass,
+		    textContent,
 		    options = this.options;
 
-		if(options.glyph.slice(0, options.prefix.length+1) === options.prefix + "-") {
+		if (!options.prefix) {
+			glyphClass = '';
+			textContent = options.glyph;
+		} else if(options.glyph.slice(0, options.prefix.length+1) === options.prefix + "-") {
 			glyphClass = options.glyph;
 		} else {
 			glyphClass = options.prefix + "-" + options.glyph;
@@ -53,6 +57,11 @@ L.Icon.Glyph = L.Icon.extend({
 		span.style.marginLeft = options.glyphAnchor[0] + 'px';
 		span.style.marginTop = options.glyphAnchor[1] + 'px';
 		span.style.pointerEvents = 'none';
+
+		if (textContent) {
+			span.innerHTML = textContent;
+			span.style.display = 'inline-block';
+		}
 
 		return span;
 	},

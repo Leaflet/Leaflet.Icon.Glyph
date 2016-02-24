@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Leaflet.Icon.Glyph demo</title>
+    <meta charset="utf-8" />
 
 <link href="https://leafletjs-cdn.s3.amazonaws.com/content/leaflet/master/leaflet.css" rel="stylesheet" type="text/css" />
 <script src="https://leafletjs-cdn.s3.amazonaws.com/content/leaflet/master/leaflet-src.js"></script>
@@ -54,12 +55,25 @@
 
 
 
+<!-- Xolonium typeface -->
+<link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/xolonium" type="text/css"/>
+
 	<style>
-    .map {
-      width:600px;
-      height:400px;
-      margin: 0;
-    }
+	.map {
+		width:600px;
+		height:400px;
+		margin: 0;
+	}
+
+	.leaflet-marker-icon.sans-serif {
+		font-weight: bold;
+		font-family: Sans Serif;
+	}
+
+	.leaflet-marker-icon.xolonium {
+		font-weight: bold;
+		font-family: Xolonium;
+	}
 	</style>
 </head>
 <body>
@@ -86,6 +100,45 @@
 	</pre></code></p>
 
 	For some weird reason, Chrome on Android <a href='https://github.com/google/material-design-icons/issues/248'>refuses to load the icon font from that CDN</a>. For this reason, consider using another method of hosting these icons if you need them.
+
+<hr>
+
+	<h2>Iconless (plain fonts)</a></h2>
+	<div class='map' id='sans-serif-map'></div>
+	<p>
+
+If no prefix is specified, then glyphs will be interpreted as plain text. Use the <tt>cssClass</tt> property to apply some styling (e.g. custom typeface):
+
+<code><pre>
+&lt;style/>
+.leaflet-marker-icon.sans-serif {
+	font-weight: bold;
+	font-family: Sans Serif;
+}
+&lt;/style/>
+
+&lt;script>
+	L.marker([-20,-20], {icon: L.icon.glyph({ prefix: '', cssClass:'sans-serif', glyph: 'A' }) }).addTo(map);
+&lt;/script>
+	</pre></code></p>
+
+You can use any typeface at all (see <a href='https://fontlibrary.org'>https://fontlibrary.org</a>  for some open source typefaces you can use, including Xolonoum:)
+	<div class='map' id='xolonium-map'></div>
+
+	<code><pre>
+&lt;link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/xolonium" type="text/css"/>
+
+&lt;style/>
+.leaflet-marker-icon.xolonium {
+	font-weight: bold;
+	font-family: Xolonium;
+}
+&lt;/style/>
+
+&lt;script>
+	L.marker([-20,-20], {icon: L.icon.glyph({ prefix: '', cssClass:'xolonium', glyph: 'A' }) }).addTo(map);
+&lt;/script>
+	</pre></code></p>
 
 
 <hr>
@@ -292,6 +345,49 @@
 
 	}
 
+	function fillMapPrefixless(cssClass, glyphs, green) {
+
+		var myCenter = new L.LatLng(0, 0);
+		var map = new L.Map(cssClass + '-map', {center: myCenter, zoom: 2});
+
+		var positron = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+			attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
+			maxZoom: 24,
+			maxNativeZoom: 18
+		}).addTo(map);
+
+		L.marker([ 20,-20], {icon: L.icon.glyph({ className: cssClass, glyph: glyphs[0] }) }).addTo(map);
+		L.marker([ 20,-10], {icon: L.icon.glyph({ className: cssClass, glyph: glyphs[1] }) }).addTo(map);
+		L.marker([ 20,  0], {icon: L.icon.glyph({ className: cssClass, glyph: glyphs[2] }) }).addTo(map);
+		L.marker([ 20, 10], {icon: L.icon.glyph({ className: cssClass, glyph: glyphs[3] }) }).addTo(map);
+		L.marker([ 20, 20], {icon: L.icon.glyph({ className: cssClass, glyph: glyphs[4] }) }).addTo(map);
+
+		L.marker([ 10,-20], {icon: L.icon.glyph({ className: cssClass, glyph: glyphs[5] }) }).addTo(map);
+		L.marker([ 10,-10], {icon: L.icon.glyph({ className: cssClass, glyph: glyphs[6] }) }).addTo(map);
+		L.marker([ 10,  0], {icon: L.icon.glyph({ className: cssClass, glyph: glyphs[7] }) }).addTo(map);
+		L.marker([ 10, 10], {icon: L.icon.glyph({ className: cssClass, glyph: glyphs[8] }) }).addTo(map);
+		L.marker([ 10, 20], {icon: L.icon.glyph({ className: cssClass, glyph: glyphs[9] }) }).addTo(map);
+
+		L.marker([  0,-20], {icon: L.icon.glyph({ className: cssClass, glyph: glyphs[10] }) }).addTo(map);
+		L.marker([  0,-10], {icon: L.icon.glyph({ className: cssClass, glyph: glyphs[11] }) }).addTo(map);
+		L.marker([  0,  0], {icon: L.icon.glyph({ className: cssClass, glyph: glyphs[12], glyphColor: green ? '#9BFF8C' : 'white' }) }).addTo(map);
+		L.marker([  0, 10], {icon: L.icon.glyph({ className: cssClass, glyph: glyphs[13] }) }).addTo(map);
+		L.marker([  0, 20], {icon: L.icon.glyph({ className: cssClass, glyph: glyphs[14] }) }).addTo(map);
+
+		L.marker([-10,-20], {icon: L.icon.glyph({ className: cssClass, glyph: glyphs[15] }) }).addTo(map);
+		L.marker([-10,-10], {icon: L.icon.glyph({ className: cssClass, glyph: glyphs[16] }) }).addTo(map);
+		L.marker([-10,  0], {icon: L.icon.glyph({ className: cssClass, glyph: glyphs[17] }) }).addTo(map);
+		L.marker([-10, 10], {icon: L.icon.glyph({ className: cssClass, glyph: glyphs[18] }) }).addTo(map);
+		L.marker([-10, 20], {icon: L.icon.glyph({ className: cssClass, glyph: glyphs[19] }) }).addTo(map);
+
+		L.marker([-20,-20], {icon: L.icon.glyph({ className: cssClass, glyph: glyphs[20] }) }).addTo(map);
+		L.marker([-20,-10], {icon: L.icon.glyph({ className: cssClass, glyph: glyphs[21] }) }).addTo(map);
+		L.marker([-20,  0], {icon: L.icon.glyph({ className: cssClass, glyph: glyphs[22] }) }).addTo(map);
+		L.marker([-20, 10], {icon: L.icon.glyph({ className: cssClass, glyph: glyphs[23] }) }).addTo(map);
+		L.marker([-20, 20], {icon: L.icon.glyph({ className: cssClass, glyph: glyphs[24] }) }).addTo(map);
+
+	}
+
 	// Material Design Icons
 	fillMap('mdi', [
 		'compass', 'directions', 'help-circle', 'cloud', 'clock',
@@ -348,6 +444,24 @@
 		'info' , 'location' , 'infinity' , 'fire' , 'person' ,
 		'shield' , 'compass' , 'x' , 'bolt' , 'plus' ,
 		'media-stop' , 'musical-note' , 'ban' , 'pin' , 'eye'
+	], false);
+
+	// Sans-serif plain font
+	fillMapPrefixless('sans-serif',[
+		'A' , 'B' , 'C' , 'D' , 'E' ,
+		'F' , 'G' , 'H' , 'I' , 'J' ,
+		'1' , '2' , '3' , '4' , '5' ,
+		'!' , '@' , '#' , '$' , '£' ,
+		'+' , '-' , '*' , '/' , ':'
+	], false);
+
+	// Hack plain font
+	fillMapPrefixless('xolonium',[
+		'A' , 'B' , 'C' , 'D' , 'E' ,
+		'F' , 'G' , 'H' , 'I' , 'J' ,
+		'1' , '2' , '3' , '4' , '5' ,
+		'!' , '@' , '#' , '$' , '£' ,
+		'+' , '-' , '*' , '/' , ':'
 	], false);
 
 

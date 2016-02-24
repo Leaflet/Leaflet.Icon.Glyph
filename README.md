@@ -41,6 +41,17 @@ var marker = L.marker(latlng, {
 });
 ```
 
+If you want to show a glyph from a "normal" font (e.g. an "A"), just set an empty prefix:
+
+```js
+var marker = L.marker(latlng, {
+	icon: L.icon.glyph({
+		prefix: '',
+		glyph: 'A'
+	})
+});
+```
+
 
 ## Options
 
