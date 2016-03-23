@@ -12,9 +12,9 @@ This means hundreds of glyphs at your disposal.
 
 ## Demo
 
-![Glyph icons demo](https://ivansanchez.github.io/Leaflet.Icon.Glyph/demo.png)
+![Glyph icons demo](https://leaflet.github.io/Leaflet.Icon.Glyph/demo.png)
 
-Live demo at [https://ivansanchez.github.io/Leaflet.Icon.Glyph/demo.html](https://ivansanchez.github.io/Leaflet.Icon.Glyph/demo.html)
+Live demo at [https://leaflet.github.io/Leaflet.Icon.Glyph/demo.html](https://leaflet.github.io/Leaflet.Icon.Glyph/demo.html)
 
 
 ## Usage
