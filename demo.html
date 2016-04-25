@@ -54,6 +54,10 @@
 <!-- 	<link rel="stylesheet" href="https://cdn.rawgit.com/stephenhutchings/typicons.font/master/src/font/typicons.css" type="text/css"> -->
 
 
+<!-- 	MapFont -->
+<link rel="stylesheet" href="http://mapfont.org/css/mapfont.css" type="text/css">
+
+
 
 <!-- Xolonium typeface -->
 <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/xolonium" type="text/css"/>
@@ -295,6 +299,21 @@ You can use any typeface at all (see <a href='https://fontlibrary.org'>https://f
 	</pre></code></p>-->
 
 
+<hr>
+
+	<h2><a href='http://mapfont.org/'>MapFont</a></h2>
+
+	<div class='map' id='mf-map'></div>
+	<p>
+	<code><pre>
+&lt;link rel="stylesheet" href="http://mapfont.org/css/mapfont.css" type="text/css">
+
+
+&lt;script>
+	L.marker([-20,-20], {icon: L.icon.glyph({ prefix: 'mf', glyph: 'monorail' }) }).addTo(map);
+&lt;/script>
+	</pre></code></p>
+
 
 
 
@@ -444,6 +463,15 @@ You can use any typeface at all (see <a href='https://fontlibrary.org'>https://f
 		'info' , 'location' , 'infinity' , 'fire' , 'person' ,
 		'shield' , 'compass' , 'x' , 'bolt' , 'plus' ,
 		'media-stop' , 'musical-note' , 'ban' , 'pin' , 'eye'
+	], false);
+
+	// MapFont
+	fillMap('mf',[
+		'petrol-station' , 'car-rent' , 'sportcar' , 'train' , 'monorail' ,
+		'cableway' , 'snowmobile' , 'shop' , 'market' , 'business-center' ,
+		'post' , 'wc' , 'map-marker' , 'cafe' , 'restaurant' ,
+		'gym' , 'museum' , 'monument' , 'square' , 'park' ,
+		'battletank' , 'spike' , 'factory' , 'home' , 'pin'
 	], false);
 
 	// Sans-serif plain font
