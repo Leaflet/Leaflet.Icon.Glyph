@@ -55,6 +55,10 @@
 
 
 
+<!-- 	Mapkey Icons -->
+	<link rel="stylesheet" href="https://cdn.rawgit.com/mapshakers/mapkeyicons/master/dist/MapkeyIcons.css" type="text/css">
+
+
 <!-- Xolonium typeface -->
 <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/xolonium" type="text/css"/>
 
@@ -294,6 +298,21 @@ You can use any typeface at all (see <a href='https://fontlibrary.org'>https://f
 &lt;/script>
 	</pre></code></p>-->
 
+<hr>
+
+	<h2><a href='https://github.com/mapshakers/mapkeyicons'>Mapkey Icons</a></h2>
+
+	<div class='map' id='mki-map'></div>
+	<p>
+	<code><pre>
+&lt;link rel="stylesheet" href="https://cdn.rawgit.com/mapshakers/mapkeyicons/master/dist/MapkeyIcons.css" type="text/css">
+
+
+&lt;script>
+	L.marker([-20,-20], {icon: L.icon.glyph({ prefix: 'mki', glyph: 'zoo' }) }).addTo(map);
+&lt;/script>
+	</pre></code></p>
+
 
 
 
@@ -445,6 +464,15 @@ You can use any typeface at all (see <a href='https://fontlibrary.org'>https://f
 		'shield' , 'compass' , 'x' , 'bolt' , 'plus' ,
 		'media-stop' , 'musical-note' , 'ban' , 'pin' , 'eye'
 	], false);
+
+	// Mapkey Icons
+	fillMap('mki',[
+		'zoo' , 'boundary_stone' , 'rocks' , 'ice_ring' , 'train' ,
+		'university' , 'castle' , 'mall' , 'heart' , 'compass' ,
+		'pyramid' , 'lion' , 'nature' , 'north' , 'camera' ,
+		'smoking' , 'fire' , 'helicopter' , 'star' , 'marker' ,
+		'toilet' , 'battlefield' , 'arrow_up_double' , 'spring' , 'construction'
+	], true);
 
 	// Sans-serif plain font
 	fillMapPrefixless('sans-serif',[

@@ -16,6 +16,16 @@ This means hundreds of glyphs at your disposal.
 
 Live demo at [https://leaflet.github.io/Leaflet.Icon.Glyph/demo.html](https://leaflet.github.io/Leaflet.Icon.Glyph/demo.html)
 
+The demo shows:
+* Plain glyphs (iconless)
+* <a href='https://materialdesignicons.com/'>Material design icons</a>
+* <a href='http://getbootstrap.com/components/#glyphicons'>Glyphicons-halflings from Bootstrap</a>
+* <a href='https://fortawesome.github.io/Font-Awesome/'>Font Awesome</a>
+* <a href='http://metroui.org.ua/font.html'>Metro UI icon font</a>
+* <a href='https://github.com/github/octicons'>Github's Octicons</a>
+* <a href='https://github.com/iconic/open-iconic'>Iconic Open</a>
+* <a href='https://github.com/mapshakers/mapkeyicons'>Mapkey Icons</a>
+
 
 ## Usage
 
@@ -52,6 +62,7 @@ var marker = L.marker(latlng, {
 });
 ```
 
+The [demo page](https://leaflet.github.io/Leaflet.Icon.Glyph/demo.html) shows how to use a few different icon typefaces and plain glyphs, check it out for inspiration!
 
 ## Options
 
