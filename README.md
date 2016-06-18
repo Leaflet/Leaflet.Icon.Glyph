@@ -11,7 +11,21 @@ This means hundreds of glyphs at your disposal.
 
 ## Notes for the "shape version"
 
-Please see demo2.html
+This repository is a clone of
+[https://github.com/Leaflet/Leaflet.Icon.Glyph](Leaflet/Leaflet.Icon.Glyph),
+with the addition of "shapes". Please see
+[https://ckhung.github.io/Leaflet.Icon.Glyph/shape-demo.html](shape-demo.html).
+Markers of different colors are taken from AwesomeMarkers.
+Additionally, 5 colorful markers of a different shape are added.
+This shape is anchored at the center and headed horizontally
+along one of the popular writing directions (left to right),
+thus more suitable for marking transportation vehicles for example.
+
+More shapes could be added by simply
+(1) adding shapes to icons.svg (and then generating icons.png)
+(2) adding entries to the shape\_store hash
+indicating its position in icons.png
+and its anchor, etc.
 
 ## Demo
 
