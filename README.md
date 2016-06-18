@@ -12,9 +12,9 @@ This means hundreds of glyphs at your disposal.
 ## Notes for the "shape version"
 
 This repository is a clone of
-[https://github.com/Leaflet/Leaflet.Icon.Glyph](Leaflet/Leaflet.Icon.Glyph),
+[Leaflet/Leaflet.Icon.Glyph](https://github.com/Leaflet/Leaflet.Icon.Glyph]),
 with the addition of "shapes". Please see
-[https://ckhung.github.io/Leaflet.Icon.Glyph/shape-demo.html](shape-demo.html).
+[shape-demo.html](https://ckhung.github.io/Leaflet.Icon.Glyph/shape-demo.html).
 Markers of different colors are taken from AwesomeMarkers.
 Additionally, 5 colorful markers of a different shape are added.
 This shape is anchored at the center and headed horizontally
