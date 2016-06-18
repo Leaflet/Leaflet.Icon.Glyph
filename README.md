@@ -9,6 +9,9 @@ CSS to be set up, and should work with any bootstrap-style icon fonts.
 
 This means hundreds of glyphs at your disposal.
 
+## Notes for the "shape version"
+
+Please see demo2.html
 
 ## Demo
 
