@@ -27,6 +27,8 @@ More shapes could be added by simply
 indicating its position in icons.png
 and its anchor, etc.
 
+![screenshot of the shape version of Glyph icons](https://ckhung.github.io/Leaflet.Icon.Glyph/shape-demo.jpg)
+
 ## Demo
 
 ![Glyph icons demo](https://leaflet.github.io/Leaflet.Icon.Glyph/demo.png)
