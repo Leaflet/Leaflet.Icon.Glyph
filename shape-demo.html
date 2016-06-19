@@ -12,6 +12,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 <script type="text/javascript" src="Leaflet.Icon.Glyph.js"></script>
+<script src="leaflet.rotatedMarker.js"></script>
 
 <style>
 .map {
@@ -53,15 +54,25 @@ function fillMap() {
 	'cloud', 'pencil', 'glass', 'music', 'heart',
 	'signal', 'road', 'lock', 'camera', 'picture'
     ];
+    var m = [], r;
     shapes.forEach(function (s, i) {
+	r = [];
 	glyphs.forEach(function (g, j) {
-	    L.marker([60-i*12, -120+j*24], {icon:
-		L.icon.glyph({
+	    r.push(L.marker([60-i*12, -120+j*24], {
+		// rotationAngle: (i>=5 && j>=5) ? Math.random()*360 : 0,
+		icon: L.icon.glyph({
 		    shape: s,
 		    prefix: 'glyphicon',
 		    glyph: g
 		})
-	    }).addTo(theMap);
+	    }).addTo(theMap));
+	});
+	m.push(r);
+    });
+    m.slice(5,10).forEach(function (r, i) {
+	r.slice(5,10).forEach(function (x, j) {
+	    x.setRotationOrigin('center center');
+	    x.setRotationAngle(i*60+j*10);
 	});
     });
 }
