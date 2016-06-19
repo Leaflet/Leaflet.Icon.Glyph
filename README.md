@@ -20,7 +20,8 @@ Additionally, 5 colorful markers of a different shape are added.
 This shape is anchored at the center and headed horizontally
 along one of the popular writing directions (left to right).
 When combined with [Leaflet.RotatedMarker](https://github.com/bbecquet/Leaflet.RotatedMarker),
-this can be more suitable for marking transportation vehicles.
+this can be more suitable for marking vehicles such as
+buses, cars, and bikes in transportation maps.
 
 More shapes could be added by simply
 (1) adding shapes to icons.svg (and then generating icons.png)

@@ -78,7 +78,7 @@ L.Icon.Glyph = L.Icon.extend({
 		},
 		purple_bullet: {
 			iconUrl: 'icons.png',
-			bgPos: { x: 144, y: 49 },
+			bgPos: { x: 188, y: 49 },
 			iconSize: [45, 27],
 			iconAnchor:  [23, 14],
 			popupAnchor: [1, -34],
