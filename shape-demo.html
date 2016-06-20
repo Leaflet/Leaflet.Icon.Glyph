@@ -1,0 +1,88 @@
+<html>
+<head>
+
+<title>demo for the shape version of Leaflet.Icon.Glyph</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<link href="https://leafletjs-cdn.s3.amazonaws.com/content/leaflet/master/leaflet.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="https://leafletjs-cdn.s3.amazonaws.com/content/leaflet/master/leaflet-src.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="Leaflet.Icon.Glyph.js"></script>
+<script src="leaflet.rotatedMarker.js"></script>
+
+<style>
+.map {
+    width:800px;
+    height:600px;
+    margin: 0;
+}
+</style>
+
+</head>
+
+<body>
+<h1>demo for the shape version of Leaflet.Icon.Glyph</h1>
+
+<p>Please see <a href="https://github.com/ckhung/Leaflet.Icon.Glyph">
+the repository home page</a> for explanations.
+
+<div id="themap" class="map"></div>
+
+
+<script>
+
+var theMap;
+
+function fillMap() {
+    var myCenter = new L.LatLng(0, 0);
+    theMap = new L.Map('themap', {center: myCenter, zoom: 2});
+
+    var positron = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
+	maxZoom: 24,
+	maxNativeZoom: 18
+    }).addTo(theMap);
+    var shapes = [
+	'red_ball', 'orange_ball', 'green_ball', 'blue_ball', 'purple_ball', 
+	'red_bullet', 'orange_bullet', 'green_bullet', 'blue_bullet', 'purple_bullet'
+    ];
+    var glyphs = [
+	'cloud', 'pencil', 'glass', 'music', 'heart',
+	'signal', 'road', 'lock', 'camera', 'picture'
+    ];
+    var m = [], r;
+    shapes.forEach(function (s, i) {
+	r = [];
+	glyphs.forEach(function (g, j) {
+	    r.push(L.marker([60-i*12, -120+j*24], {
+		// rotationAngle: (i>=5 && j>=5) ? Math.random()*360 : 0,
+		icon: L.icon.glyph({
+		    shape: s,
+		    prefix: 'glyphicon',
+		    glyph: g
+		})
+	    }).addTo(theMap));
+	});
+	m.push(r);
+    });
+    m.slice(5,10).forEach(function (r, i) {
+	r.slice(5,10).forEach(function (x, j) {
+	    x.setRotationOrigin('center center');
+	    x.setRotationAngle(i*60+j*10);
+	});
+    });
+}
+
+fillMap();
+
+</script>
+
+</body>
+
+</html>
+
+

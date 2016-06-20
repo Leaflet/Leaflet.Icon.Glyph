@@ -9,6 +9,27 @@ CSS to be set up, and should work with any bootstrap-style icon fonts.
 
 This means hundreds of glyphs at your disposal.
 
+## Notes for the "shape version"
+
+This repository is a clone of
+[Leaflet/Leaflet.Icon.Glyph](https://github.com/Leaflet/Leaflet.Icon.Glyph),
+with the addition of "shapes". Please see
+[shape-demo.html](https://ckhung.github.io/Leaflet.Icon.Glyph/shape-demo.html).
+Markers of different colors are taken from AwesomeMarkers.
+Additionally, 5 colorful markers of a different shape are added.
+This shape is anchored at the center and headed horizontally
+along one of the popular writing directions (left to right).
+When combined with [Leaflet.RotatedMarker](https://github.com/bbecquet/Leaflet.RotatedMarker),
+this can be more suitable for marking vehicles such as
+buses, cars, and bikes in transportation maps.
+
+More shapes could be added by simply
+(1) adding shapes to icons.svg (and then generating icons.png)
+(2) adding entries to the shape\_store hash
+indicating its position in icons.png
+and its anchor, etc.
+
+![screenshot of the shape version of Glyph icons](https://ckhung.github.io/Leaflet.Icon.Glyph/shape-demo.png)
 
 ## Demo
 
