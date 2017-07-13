@@ -185,36 +185,38 @@ function validateRGB(r, g, b) {
 
 
 // Adapted from http://www.majas-lapu-izstrade.lv/cross-browser-grayscale-image-example-using-css3-js-v2-0-with-browser-feature-detection-using-modernizr/
-function rotateHue(src, hueShift){
+function rotateHue(src, hueShift,  callBack){
 	var canvas = document.createElement('canvas');
 	var ctx = canvas.getContext('2d');
 	var imgObj = new Image();
 	imgObj.src = src;
-	canvas.width = imgObj.width;
-	canvas.height = imgObj.height;
-	ctx.drawImage(imgObj, 0, 0);
-	var imgPixels = ctx.getImageData(0, 0, canvas.width, canvas.height);
-	for(var y = 0; y < imgPixels.height; y++){
-		for(var x = 0; x < imgPixels.width; x++){
-			var i = (y * 4) * imgPixels.width + x * 4;
+	imgObj.onload = function(){
+		canvas.width = imgObj.width;
+		canvas.height = imgObj.height;
+		ctx.drawImage(imgObj, 0, 0);
+		var imgPixels = ctx.getImageData(0, 0, canvas.width, canvas.height);
+		for(var y = 0; y < imgPixels.height; y++){
+			for(var x = 0; x < imgPixels.width; x++){
+				var i = (y * 4) * imgPixels.width + x * 4;
 
-			var hsl = rgb2hsl(imgPixels.data[i], imgPixels.data[i + 1], imgPixels.data[i + 2]);
-			var rgb = hsl2rgb(hsl.h + hueShift, hsl.s, hsl.l);
+				var hsl = rgb2hsl(imgPixels.data[i], imgPixels.data[i + 1], imgPixels.data[i + 2]);
+				var rgb = hsl2rgb(hsl.h + hueShift, hsl.s, hsl.l);
 
-			imgPixels.data[i] = rgb.r;
-			imgPixels.data[i + 1] = rgb.g;
-			imgPixels.data[i + 2] = rgb.b;
+				imgPixels.data[i] = rgb.r;
+				imgPixels.data[i + 1] = rgb.g;
+				imgPixels.data[i + 2] = rgb.b;
+			}
 		}
-	}
-	ctx.putImageData(imgPixels, 0, 0, 0, 0, imgPixels.width, imgPixels.height);
-	return canvas.toDataURL();
+		ctx.putImageData(imgPixels, 0, 0, 0, 0, imgPixels.width, imgPixels.height);
+		callBack (canvas.toDataURL());
+	};		
 };
 
 L.Icon.Glyph._precalculatedColorIcons = {};
 
-L.Icon.Glyph.getColorIconUrl = function(color) {
+L.Icon.Glyph.getColorIconUrl = function(color,callBack) {
 	if (color in L.Icon.Glyph._precalculatedColorIcons) {
-		return L.Icon.Glyph._precalculatedColorIcons[color];
+		callBack( L.Icon.Glyph._precalculatedColorIcons[color]);
 	}
 
 	var shift = 0;
@@ -234,7 +236,11 @@ L.Icon.Glyph.getColorIconUrl = function(color) {
 		default: throw new Error('Unknown colour for getColorIconUrl()');
 	}
 
-	return L.Icon.Glyph._precalculatedColorIcons[color] = rotateHue(L.Icon.Glyph.prototype.options.iconUrl, shift);
+	rotateHue(L.Icon.Glyph.prototype.options.iconUrl,shift, 
+				function(ret) { 
+								L.Icon.Glyph._precalculatedColorIcons[color]=ret; 
+								callBack(ret); 
+				});
 };
 
 
