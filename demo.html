@@ -15,9 +15,8 @@
 <!-- 	Glyphicons (from Bootstrap CDN) -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
 
-<!-- 	Font Awesome -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-
+<!--  Font Awesome 5 -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 
 <!-- 	Metro UI icon font -->
 	<link rel="stylesheet" href="https://cdn.rawgit.com/olton/Metro-UI-CSS/master/build/css/metro-icons.min.css">
@@ -161,15 +160,16 @@ You can use any typeface at all (see <a href='https://fontlibrary.org'>https://f
 
 <hr>
 
-	<h2><a href='https://fortawesome.github.io/Font-Awesome/'>Font Awesome</a></h2>
+	<h2><a href='https://fontawesome.com'>Font Awesome</a></h2>
 
-	<div class='map' id='fa-map'></div>
+	<div class='map' id='fas-map'></div>
 	<p>
 	<code><pre>
-&lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+&lt;link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 
 &lt;script>
-	L.marker([-20,-20], {icon: L.icon.glyph({ prefix: 'fa', glyph: 'globe' }) }).addTo(map);
+	L.marker([-20,-20], {icon: L.icon.glyph({ prefix: 'fas', glyph: 'globe' }) }).addTo(map);
+	L.marker([20,20], {icon: L.icon.glyph({ prefix: 'fab', glyph: 'github' }) }).addTo(map);
 &lt;/script>
 	</pre></code></p>
 
@@ -428,11 +428,11 @@ You can use any typeface at all (see <a href='https://fontlibrary.org'>https://f
 
 
 	// Font Awesome
-	fillMap('fa',[
-		'asterisk' , 'ban' , 'automobile' , 'bars' , 'binoculars' ,
-		'bug' , 'bus' , 'check' , 'circle' , 'check-circle-o' ,
-		'close' , 'cloud' , 'leaf', 'comment' , 'compass' ,
-		'male' , 'female' , 'dashboard' , 'flag' , 'flash' ,
+	fillMap('fas',[
+		'asterisk' , 'ban' , 'car' , 'bars' , 'binoculars' ,
+		'bug' , 'bus' , 'check' , 'circle' , 'check-circle' ,
+		'window-close' , 'cloud' , 'leaf', 'comment' , 'compass' ,
+		'male' , 'female' , 'tachometer-alt' , 'flag' , 'file-pdf' ,
 		'flask' , 'cog' , 'info-circle' , 'motorcycle' , 'paper-plane'
 	], true);
 
