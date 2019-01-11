@@ -43,6 +43,7 @@ L.Icon.Glyph = L.Icon.extend({
 			glyphClass = '';
 			textContent = options.glyph;
 		} else if((options.prefix === "fab") || (options.prefix === "fal") || (options.prefix === "far") || (options.prefix === "fas")) {
+			// Hack for Font Awesome 5 - it needs two different prefixes.
 			glyphClass = "fa-" + options.glyph;
 		} else if(options.glyph.slice(0, options.prefix.length+1) === options.prefix + "-") {
 			glyphClass = options.glyph;
