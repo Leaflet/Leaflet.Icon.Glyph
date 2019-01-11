@@ -20,7 +20,7 @@ The demo shows:
 * Plain glyphs (iconless)
 * <a href='https://materialdesignicons.com/'>Material design icons</a>
 * <a href='http://getbootstrap.com/components/#glyphicons'>Glyphicons-halflings from Bootstrap</a>
-* <a href='https://fortawesome.github.io/Font-Awesome/'>Font Awesome</a>
+* <a href='https://fontawesome.com'>Font Awesome</a>
 * <a href='http://metroui.org.ua/font.html'>Metro UI icon font</a>
 * <a href='https://github.com/github/octicons'>Github's Octicons</a>
 * <a href='https://github.com/iconic/open-iconic'>Iconic Open</a>
@@ -135,4 +135,3 @@ can do whatever you want with this stuff. If we meet some day, and you think
 this stuff is worth it, you can buy me a beer in return.
 
 ----------------------------------------------------------------------------
-
